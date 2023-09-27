@@ -1,3 +1,17 @@
+# Projeto desenvolvido em Angular 14, utilizando formulários orientados a Template, via FormsModule, que oferece diretivas (ngForm) e provedores para gerenciamento do formulário.  
+
+Este projeto foi feita com base no curso Angular: Formulários orientados a Template, da Alura, com o instrutor Diego Carlos Martins Gayoso. 
+
+Projeto original: 
+
+![image](https://github.com/natalia-r-l/Angular-Formulario-Template/assets/61936956/10196b4a-e3cb-49fa-89a7-842a93390603)
+
+
+
+_________________________________________________________________________________________________________________________________________________________________________
+
+
+
 # FormsReativos
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.2.5.
