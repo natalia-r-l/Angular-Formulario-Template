@@ -1,4 +1,4 @@
-# Projeto desenvolvido em Angular 14, utilizando formulários orientados a Template, via FormsModule, que oferece diretivas (ngForm) e provedores para gerenciamento do formulário.  
+# Projeto desenvolvido em Angular 14, utilizando formulários orientados a Template, via FormsModule, um módulo que é importado da API @angular/forms, e que oferece diretivas (ngForm) e provedores para gerenciamento do formulário.  
 
 Este projeto foi feita com base no curso Angular: Formulários orientados a Template, da Alura, com o instrutor Diego Carlos Martins Gayoso. 
 
