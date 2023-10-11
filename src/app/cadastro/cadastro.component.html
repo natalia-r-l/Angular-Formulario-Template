@@ -17,23 +17,21 @@
         ngModel
         required
         minlength="3"
+        #nome="ngModel"
       />
       <div
         *ngIf="
-          (form.controls['nome']?.invalid && form.controls['nome']?.touched) ||
-          form.controls['nome']?.dirty
+          (nome?.invalid && nome?.touched) ||
+          nome?.dirty
         "
       >
         <span
-          class="erro__texto"
-          *ngIf="form.controls['nome']?.errors?.['required']"
-          >O campo de nome é obrigatório</span
-        >
-        <span
-          class="erro__texto"
-          *ngIf="form.controls['nome']?.errors?.['minlength']"
-          >O nome deve ter no mínimo 3 carateceres</span
-        >
+          class="erro__texto"          
+        ></span>
+        <app-mensagem *ngIf="nome.errors?.['required']"
+        mensagem="O campo de nome é obrigatório"></app-mensagem>
+        <app-mensagem *ngIf="nome.errors?.['minlength']"
+        mensagem="O nome deve ter no mínimo 3 carateceres"></app-mensagem>
       </div>
     </div>
     <div class="formulario__dupla">
@@ -46,7 +44,23 @@
           class="campo__escrita"
           ngModel
           required
+          #nascimento="ngModel"
+          maiorIdadeValidator
         />
+        <div
+        *ngIf="
+          (nascimento?.invalid && nascimento?.touched) ||
+          nascimento?.dirty
+        "
+      >
+        <span
+          class="erro__texto"          
+        ></span>
+        <app-mensagem *ngIf="nascimento.errors?.['required']"
+        mensagem="A data de nascimento é obrigatória"></app-mensagem>
+        <app-mensagem *ngIf="nascimento.errors?.['maiorIdadeValidator']"
+        mensagem="O usuário deve ter mais de 18 anos"></app-mensagem>
+      </div>
       </div>
       <div class="formulario__campo">
         <label class="campo__etiqueta" for="telefone">Contato</label>
@@ -59,28 +73,23 @@
           ngModel
           required
           pattern="(\(?\d{2}\)?\s?)(\d{5}\-?\d{4})"
+          #telefone="ngModel"
         />
         <div
       *ngIf="
-        (form.controls['email']?.invalid && form.controls['email']?.touched) ||
-        form.controls['email']?.dirty
+        (telefone?.invalid && telefone?.touched) ||
+        telefone?.dirty
       "
     >
       <span
-        class="erro__texto"
-        *ngIf="form.controls['telefone']?.errors?.['required']"
-        >O campo de e-mail é obrigatório</span
-      >
-      <span
-        class="erro__texto"
-        *ngIf="form.controls['telefone']?.errors?.['minlength']"
-        >O e-mail deve ter no mínimo 11 carateceres</span
-      >
-      <span
-        class="erro__texto"
-        *ngIf="form.controls['telefone']?.errors?.['pattern']"
-        >O e-mail deve seguir este padrão: (XX) XXXXX-XXXX</span
-      >
+        class="erro__texto">
+      </span>
+      <app-mensagem *ngIf="telefone.errors?.['required']"
+      mensagem="O campo de nome é obrigatório"></app-mensagem>
+      <app-mensagem *ngIf="telefone.errors?.['minlength']"
+      mensagem="O e-mail deve ter no mínimo 11 carateceres"></app-mensagem>
+      <app-mensagem *ngIf="telefone.errors?.['pattern']"
+      mensagem="O e-mail deve seguir este padrão: (XX) XXXXX-XXXX"></app-mensagem>
     </div>
       </div>
     </div>
@@ -94,28 +103,23 @@
         ngModel
         required
         pattern="^[\w-.]+@([\w-]+\.)+[\w-]{2,4}$"
+        #email="ngModel"
       />
       <div
       *ngIf="
-        (form.controls['email']?.invalid && form.controls['email']?.touched) ||
-        form.controls['email']?.dirty
+        (email && email?.touched) ||
+        email?.dirty
       "
     >
-      <span
-        class="erro__texto"
-        *ngIf="form.controls['email']?.errors?.['required']"
-        >O campo de e-mail é obrigatório</span
-      >
-      <span
-        class="erro__texto"
-        *ngIf="form.controls['email']?.errors?.['minlength']"
-        >O e-mail deve ter no mínimo 3 carateceres</span
-      >
-      <span
-        class="erro__texto"
-        *ngIf="form.controls['email']?.errors?.['pattern']"
-        >O e-mail deve seguir este padrão: meuemail@email.com</span
-      >
+      <span 
+      class="erro__texto">        
+      </span>
+      <app-mensagem *ngIf="nome.errors?.['required']"
+      mensagem="O campo de e-mail é obrigatório"></app-mensagem>
+      <app-mensagem *ngIf="nome.errors?.['minlength']"
+      mensagem="O e-mail deve ter no mínimo 3 carateceres"></app-mensagem>
+      <app-mensagem *ngIf="nome.errors?.['pattern']"
+      mensagem="O e-mail deve seguir este padrão: meuemail@email.com"></app-mensagem>
     </div>
     </div>
 
