@@ -1,6 +1,7 @@
 import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { ConsultCepService } from '../services/consult-cep.service';
 
 @Component({
   selector: 'app-cadastro',
@@ -9,9 +10,17 @@ import { NgForm } from '@angular/forms';
 })
 export class CadastroComponent implements OnInit {
 
-  constructor(private router: Router) { }
+  constructor(
+    private router: Router,
+    private consultaCepService: ConsultCepService) { }
 
   ngOnInit(): void {
+  }
+
+  consultaCep(ev: any){
+    const cep = ev.target.value;
+    return this.consultaCepService.getConsultaCep(cep).subscribe(resultado => 
+      console.log('Resultado', resultado));
   }
 
   cadastrar(form: NgForm){

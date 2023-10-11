@@ -1,6 +1,5 @@
 <main class="principal">
   <h2 class="principal__titulo">Dados do cadastro</h2>
-
   <form
     class="principal__formulario"
     id="formulario"
@@ -127,10 +126,26 @@
 
     <div class="formulario__campo">
       <label class="campo__etiqueta" for="cep">CEP</label>
-      <input name="cep" id="cep" class="campo__escrita" />
-      <div id="erro"></div>
+      <input name="cep" id="cep" class="campo__escrita" ngModel required #cep="ngModel" pattern="^(\d{5})(-?\d{3})$" minlength="8" maxlength="9" (blur)="consultaCep($event)"/>
+      <div
+      *ngIf="
+        (cep && cep?.touched) ||
+        cep?.dirty
+      "
+    >
+      <span 
+      class="erro__texto">        
+      </span>
+      <app-mensagem *ngIf="cep.errors?.['required']"
+      mensagem="O campo de CEP é obrigatório"></app-mensagem>
+      <app-mensagem *ngIf="nome.errors?.['minlength']"
+      mensagem="O e-mail deve ter no mínimo 8 caracteres"></app-mensagem>
+      <app-mensagem *ngIf="nome.errors?.['maxlength']"
+      mensagem="O e-mail deve ter no máximo 9 caracteres"></app-mensagem>
+      <app-mensagem *ngIf="nome.errors?.['pattern']"
+      mensagem="O e-mail deve seguir este padrão: 00000-000"></app-mensagem>
     </div>
-
+    </div>
     <div class="formulario__campo">
       <label class="campo__etiqueta" for="endereco">Endereço</label>
       <input name="endereco" id="endereco" class="campo__escrita" />
