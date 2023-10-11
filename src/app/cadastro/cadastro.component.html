@@ -58,7 +58,30 @@
           class="campo__escrita"
           ngModel
           required
+          pattern="(\(?\d{2}\)?\s?)(\d{5}\-?\d{4})"
         />
+        <div
+      *ngIf="
+        (form.controls['email']?.invalid && form.controls['email']?.touched) ||
+        form.controls['email']?.dirty
+      "
+    >
+      <span
+        class="erro__texto"
+        *ngIf="form.controls['telefone']?.errors?.['required']"
+        >O campo de e-mail é obrigatório</span
+      >
+      <span
+        class="erro__texto"
+        *ngIf="form.controls['telefone']?.errors?.['minlength']"
+        >O e-mail deve ter no mínimo 11 carateceres</span
+      >
+      <span
+        class="erro__texto"
+        *ngIf="form.controls['telefone']?.errors?.['pattern']"
+        >O e-mail deve seguir este padrão: (XX) XXXXX-XXXX</span
+      >
+    </div>
       </div>
     </div>
     <div class="formulario__campo">
@@ -70,8 +93,30 @@
         class="campo__escrita"
         ngModel
         required
-        email
+        pattern="^[\w-.]+@([\w-]+\.)+[\w-]{2,4}$"
       />
+      <div
+      *ngIf="
+        (form.controls['email']?.invalid && form.controls['email']?.touched) ||
+        form.controls['email']?.dirty
+      "
+    >
+      <span
+        class="erro__texto"
+        *ngIf="form.controls['email']?.errors?.['required']"
+        >O campo de e-mail é obrigatório</span
+      >
+      <span
+        class="erro__texto"
+        *ngIf="form.controls['email']?.errors?.['minlength']"
+        >O e-mail deve ter no mínimo 3 carateceres</span
+      >
+      <span
+        class="erro__texto"
+        *ngIf="form.controls['email']?.errors?.['pattern']"
+        >O e-mail deve seguir este padrão: meuemail@email.com</span
+      >
+    </div>
     </div>
 
     <h3 class="principal__subtitulo">Endereço</h3>
