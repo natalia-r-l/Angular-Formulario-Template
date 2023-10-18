@@ -16,7 +16,5 @@ export class HeaderComponent implements OnInit {
     this.router.navigate(['cadastro'])
   }
 
-  goToMemoteca(){
-    alert('Teste');
-  }
+
 }

@@ -1,57 +1,68 @@
-.principal {
-  width: 50vw;
-  margin: 5em auto 6em auto;
+
+
+.container-fluid{
+  background-image: linear-gradient(180deg, rgb(224, 224, 238), rgb(226, 226, 215));
+  padding: 40px;
 }
+
+.principal{
+  display: flex;   
+  flex-direction: column;
+  justify-content: center
+}
+
 
 .principal__titulo {
   font-style: normal;
   font-weight: 700;
   font-size: 26px;
-  color: var(--laranja)
+  color: var(--vermelho)
 }
 
-.principal__subtitulo {
-  font-weight: 700;
-  font-size: 17px;
-  line-height: 26px;
-  color: var(--azul);
-  margin: 3em 0 2em 0;
-}
+
 .campo__etiqueta {
   display: block;
-  font-weight: 700;
-  font-size: 16px;
+  font-weight: 500;
+  font-size: 13px;
   line-height: 24px;
-  color: var(--azul);
-  margin-left: 1em;
+  color: var(--preto);
+  margin-left: 0.5em;
 }
 
 .campo__escrita {
-  border: 1px solid var(--azul);
+  border: 1px solid lightgray;
   border-radius: 24px;
   padding: 1em;
   width: 100%;
 }
 
 .formulario__campo {
-  margin: .6em 3em .6em 0;
-
+  margin: .6em 0em .6em 0;
 }
 
-.formulario__dupla {
+.botao{
   display: flex;
+  flex-direction: column;
+  align-items: center;
 }
+
 
 .formulario__botao {
-  background: var(--laranja);
+  background: var(--vermelho);
   padding: 1em 4em;
-  font-weight: 700;
-  font-size: 20px;
-  line-height: 30px;
+  font-weight: 500;
+  font-size: 16px;  
   border: none;
   color: var(--branco);
   cursor: pointer;
-  float: right;
+  display: flex;
+  flex-direction: column; 
+  border-radius: 10px; 
+  margin-top: 30px;
+} 
+
+.formulario__botao:hover{
+  background-color: var(--vermelho-escuro);
 }
 
 .formulario__erro {
@@ -69,9 +80,31 @@
   background-size: contain;
 }
 
-
-
 .ng-touched.ng-invalid:not(form){
   border-color: red;
   color: red;
+}
+
+.campo__escrita{
+  font-size: 12px;
+  color: gray;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.ilustracao{ 
+  margin: 70px auto 0px auto;
+  max-width: 470px;
+}
+
+.ilustra {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+@media screen and (max-width: 768px) {
+  .ilustracao{ 
+     max-width: 300px;
+     margin: 50px 0px 0px 0px
+  }
 }
