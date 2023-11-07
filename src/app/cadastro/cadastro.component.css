@@ -16,7 +16,9 @@
   font-style: normal;
   font-weight: 700;
   font-size: 26px;
-  color: var(--vermelho)
+  color: var(--vermelho);
+  margin-bottom: 30px ;
+  
 }
 
 
@@ -46,6 +48,11 @@
   align-items: center;
 }
 
+.alura__books{
+  margin-top: 10px;
+  font-size: 30px;
+  font-weight: 800;
+}
 
 .formulario__botao {
   background: var(--vermelho);
