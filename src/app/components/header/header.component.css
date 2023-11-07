@@ -1,79 +1,102 @@
-p{margin: 0;}
 
-.cabeçalho {
-  background-color: var(--preto);
+.header-section {
   display: flex;
+  flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  position: relative;
-  height: 80px;
+  background-color: #ffffff;
+  height: 70px;
 }
 
-.container {
-  display: flex;
-  align-items: center;
-}
-
-.container__titulo {
-  color: white;
-  font-size: 16px;
+.header-section .logo img {
+  max-width: 180px;
+  cursor: pointer;
   margin-left: 20px;
 }
 
 .botao {
-  background: var(--vermelho);
-  padding: 0.5em;
-  font-weight: 500;
-  font-size: 16px;  
-  border: none;
-  color: var(--branco);
-  cursor: pointer;
   display: flex;
-  flex-direction: column; 
-  border-radius: 10px;  
+  flex-direction: row;
+  align-items: center;
+  background-color: #FAD02C;
+  padding: 1rem;
+  font-size: 14px;
+  font-weight: 500;
+  border: none;
+  color: black;
+  cursor: pointer;
+  border-radius: 10px;
   margin-right: 20px;
-} 
+}
 
 .botao:hover{
-  background-color: var(--vermelho-escuro);
+  background-image: linear-gradient(to right, #5FC9DA, #00BFD6 );
 }
 
-@media screen and (min-width: 1024px) {
-  .container__titulo,
-  .container__titulo--negrito {
-      font-family: var(--fonte-secundario);
-      font-size: 30px;
-  }
-
-  .container__titulo {
-      font-weight: 400;
-      display: block;
-  }
-
-  .container__titulo--negrito {
-      font-weight: 700;
-  }
-
-
+.offcanvas-body{
+display: flex;
+flex-direction: column;
+align-items: center;
 }
 
-@media screen and (min-width: 1728px) {
-  .container__link {
-      display: flex;
-      align-items: center;
-      text-decoration: none;
-      color: var(--preto);
-  }
-
-  .cabeçalho {
-      padding: 0 2em;
-  }
-
-  .opções {
-      margin-right: auto;
-  }
-
-  .container__texto {
-      display: block;
-  }
+.contact{
+color: #F04578;
+font-weight: 700;
+margin-right: 20px;
 }
+
+p{
+margin: 0;
+}
+
+.btn-section{
+margin-top: 20px;
+display: flex;
+flex-direction: column;
+align-items: center;
+}
+
+.btn-pink{
+background-color: #F04578;
+color: white;
+font-weight: 700;
+font-family: 'Roboto', sans-serif;
+}
+
+.btn-pink-link{
+background-color: #F04578;
+color: white;
+font-weight: 700;
+font-family: 'Roboto', sans-serif;
+border-radius: 10px;
+padding: 0.7rem;
+text-decoration: none;
+}
+
+.bi-linkedin{
+color: #0a66c2;
+width: 80px;
+margin: 30px 0px 50px 0px;
+}
+
+.offcanvas-title{
+font-size: 30px;
+color: #F04578;
+}
+
+.offcanvas-body{
+font-size: 18px;
+text-align: center;
+}
+
+.first-line{
+font-weight: 500;
+margin-bottom: 20px;
+}
+
+.second-line{
+font-weight: 400;
+margin-bottom: 20px;
+}
+
+
