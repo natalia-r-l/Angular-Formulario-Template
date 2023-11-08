@@ -324,6 +324,9 @@
             </select>
           </div>
         </div>      
+        <div *ngIf="failed" class="alert alert-danger" role="alert">
+          O formulário não foi enviado. Há algum erro no preenchimento dos campos. 
+        </div>
         <div class="botao ">
           <button type="submit" class="formulario__botao" routerLink="/listNotes">
             Enviar formulário

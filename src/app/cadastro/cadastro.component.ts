@@ -10,6 +10,8 @@ import { ConsultCepService } from '../services/consult-cep.service';
 })
 export class CadastroComponent implements OnInit {
 
+  failed: boolean = false;
+
   constructor(
     private router: Router,
     private consultaCepService: ConsultCepService) { }
@@ -17,7 +19,6 @@ export class CadastroComponent implements OnInit {
   ngOnInit(): void {
   }
 
- 
   consultaCEP(ev: any, form: NgForm) {
     const cep = ev.target.value;
     if(cep !== ''){
@@ -42,7 +43,7 @@ export class CadastroComponent implements OnInit {
     if(form.valid){
       this.router.navigate(['/sucesso'])
     } else {
-      alert('Formulario inválido');
+      this.failed = true;
     }     
   }
 }
